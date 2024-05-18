@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to Holtec Tally Connect</h1>
+    <hr />
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Go To Employees</h2>
+        <p>
+            Gives a breakdown of Employee data in the Holtec Tally DB
+        </p>
+        <button class="btn-block btn-default">@Html.ActionLink("Go to Tally", "Tally",new {Id=1})</button>
+    </div>
+    <div class="col-md-4">
+        <h2>Get PUrchase orders Stock groups</h2>
+        <p>Gets the data for Various PO stock Groups.</p>
+        <button class="btn-block btn-default">@Html.ActionLink("Go to Tally", "Tally", new { Id = 2 })</button>
+    </div>
+    <div class="col-md-4">
+        <h2>PO STock Items</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <button class="btn-block btn-default">@Html.ActionLink("Go to Tally", "Tally", new { Id = 3 })</button>
+    </div>
+</div>

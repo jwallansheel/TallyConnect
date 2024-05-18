@@ -1,0 +1,49 @@
+﻿@model System.Web.UI.WebControls.GridView
+
+@{
+    ViewBag.Title = "Tally Data";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            overflow-y:auto;
+            max-width:100%;
+            
+        }
+
+        th {
+            border: 3px solid black;
+            padding: 5px;
+        }
+         td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>@ViewBag.Title</h2>
+    @if (Model != null)
+    {
+        using (var writer = new System.IO.StringWriter())
+        {
+            using (var htmlWriter = new System.Web.UI.HtmlTextWriter(writer))
+            {
+                Model.RenderControl(htmlWriter);
+                @Html.Raw(writer.ToString())
+            }
+        }
+    }
+    else
+    {
+        <p>No data available.</p>
+    }
+</body>
+</html>
